@@ -12,12 +12,10 @@ RUN python3 get-pip.py
 RUN pip3 install tensorflow==1.15.0 keras==2.2.4 matplotlib==2.0.2 scikit-build scipy
 
 RUN mkdir -p /tutorial/Training
-
 RUN mv ./mnist.py /tutorial/Training/
 
 
-RUN ls -lrt *
-ENTRYPOINT ["tail", "-f", "/dev/null"]
+CMD ["python3", "/tutorial/Training/mnist.py "]
 
 
 # install this docker (if linuex os)
