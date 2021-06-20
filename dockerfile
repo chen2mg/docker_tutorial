@@ -24,14 +24,14 @@ ENTRYPOINT ["tail", "-f", "/dev/null"]
 # https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html
 ## docker notes
 ## 1. build - about 5 mins
-#sudo docker build -f Dockerfile -t blujeans-img .
+#sudo docker build -f Dockerfile -t <my_docker_image> .
 #
 ## 2. run image as container
-#sudo docker run --gpus all -d d9f9cc234ab6
+#sudo docker run --gpus all -d <image_ID>
 #
 ## 3. run interactive mode
-#sudo docker exec -it container_ID /bin/bash
+#sudo docker exec -it <container_ID> /bin/bash
 #
 ## 4. run training
-#cd /bluejeans-sdk/Training/myTrain
-#python train_RTX.py
+#cd /tutorial/Training
+#python3 mnist.py
