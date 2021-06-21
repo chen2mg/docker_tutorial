@@ -45,9 +45,9 @@ epochs = 15
 model.compile(loss="categorical_crossentropy", optimizer="adam", metrics=["accuracy"])
 model.fit(x_train, y_train, batch_size=batch_size, epochs=epochs, validation_split=0.1)
 
-model.save('my_model.h5')
+model.save(os.getcwd()+'my_model.h5')
 print('****************** saving model ****************************')
-print("Model saved at", os.getcwd()+"/'my_model.h5'")
+print("Model saved at", os.getcwd()+"/my_model.h5")
 print('****************** end saving model ************************')
 score = model.evaluate(x_test, y_test, verbose=0)
 print("Test loss:", score[0])
