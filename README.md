@@ -30,4 +30,4 @@
 `python3 mnist.py`
 
 ### 6. copy file from container to local
-`docker cp container_ID:/tutorial/Training/my_model.h5 .`
+`docker cp container_ID:/tutorial/my_model.h5 .`
