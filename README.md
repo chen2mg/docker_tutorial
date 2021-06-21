@@ -1,6 +1,6 @@
 # Guide
 
-#******************** building cmds*************************
+# ******************** building cmds*************************
 
 ### a. install this docker (if linuex os)
 ### https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html
@@ -11,7 +11,7 @@
 ### c. build & run & save the docker image - about 5 mins
 `sudo docker build -f dockerfile -t <my_docker_image> .`
 
-#******************** additional cmds*************************
+# ******************** additional cmds*************************
 
 ### 1. list all images
 `sudo docker images`
