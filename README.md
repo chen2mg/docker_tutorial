@@ -1,5 +1,8 @@
 # Guide
 
+### if you have no idea what is docker, see here: https://www.youtube.com/watch?v=fqMOX6JJhGo
+
+
 # *** building cmds ***
 
 ### a. install this docker (if linuex os)
