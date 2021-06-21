@@ -8,7 +8,7 @@
 ## b. get the repo
 `git clone https://github.com/chen2mg/docker_tutorial.git`
 
-## b. build - about 5 mins
+## c. build & run & save the docker image - about 5 mins
 `sudo docker build -f dockerfile -t <my_docker_image> .`
 
 #******************** additional cmds*************************
