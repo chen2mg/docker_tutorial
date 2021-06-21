@@ -2,7 +2,7 @@ FROM nvidia/cudagl:11.2.2-devel-ubuntu18.04
 
 WORKDIR /tutorial/
 
-# the * should include "vzw_youtube_zip_apr_20.tar.gz" or you need add it by your own
+# the * should include scripts or data files
 ADD ./* /tutorial/
 
 RUN apt-get update && apt-get install -qq libsm6 libxrender1 libfontconfig1 libxext6 git
@@ -13,23 +13,38 @@ RUN pip3 install tensorflow==1.15.0 keras==2.2.4 matplotlib==2.0.2 scikit-build 
 
 RUN mkdir -p /tutorial/Training
 RUN mv ./mnist.py /tutorial/Training/
+RUN python3 /tutorial/Training/mnist.py
+
+RUN ls -lrt *
+ENTRYPOINT ["tail", "-f", "/dev/null"]
 
 
-CMD ["python3", "/tutorial/Training/mnist.py "]
+##******************** building cmds*************************
 
-
-# install this docker (if linuex os)
+## a. install this docker (if linuex os)
 # https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html
 ## docker notes
-## 1. build - about 5 mins
-#sudo docker build -f Dockerfile -t <my_docker_image> .
+## b. build - about 5 mins
+#sudo docker build -f dockerfile -t <my_docker_image> .
 #
-## 2. run image as container
+
+##******************** additional cmds*************************
+
+## 1. list all images
+# sudo docker images
+#
+## 2. list all running containers
+# sudo docker ps
+#
+## 3. run image as container
 #sudo docker run --gpus all -d <image_ID>
 #
-## 3. run interactive mode
+## 4. run interactive mode
 #sudo docker exec -it <container_ID> /bin/bash
 #
-## 4. run training
+## 5. run training
 #cd /tutorial/Training
 #python3 mnist.py
+#
+## 6. copy file from container to local
+# docker cp container_ID:/tutorial/Training/my_model.h5 .
