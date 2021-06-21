@@ -1,4 +1,5 @@
 import numpy as np
+import os
 from tensorflow import keras
 from tensorflow.keras import layers
 
@@ -45,7 +46,9 @@ model.compile(loss="categorical_crossentropy", optimizer="adam", metrics=["accur
 model.fit(x_train, y_train, batch_size=batch_size, epochs=epochs, validation_split=0.1)
 
 model.save('my_model.h5')
-
+print('****************** saving model ****************************')
+print("Model saved at", os.getcwd()+"/'my_model.h5'")
+print('****************** end saving model ************************')
 score = model.evaluate(x_test, y_test, verbose=0)
 print("Test loss:", score[0])
 print("Test accuracy:", score[1])
