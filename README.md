@@ -1,6 +1,6 @@
 # Guide
 
-### if you have no idea what is docker, check this: shorturl.at/xFIK5
+### if you have no idea what is docker, check this(shorturl.at/xFIK5)
 
 
 # *** building cmds ***
